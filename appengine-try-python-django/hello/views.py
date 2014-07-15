@@ -41,10 +41,22 @@ def scumbag(p1, p2):
 def list_sample():
     my_list = [1, 2, 3]
     my_tuple = (1, 2, 3)
+    my_dictionary = {'a': 1, 'b': 6}
 
     casted_to_list = list(my_tuple)
 
     print(my_tuple)
     print(my_list)
     print(casted_to_list)
+    print(my_dictionary)
     return my_list
+
+"""
+trying out this stuff: https://docs.python.org/2/library/stdtypes.html#string-formatting
+"""
+
+
+def formatting_sample(request):
+    s = 'The crappy persons name is %(suz)s and %(sup)s' % {"sup": "crappy", "suz": "crappppp"}
+    print s
+    return http.HttpResponse(s)
