@@ -1,3 +1,4 @@
+import  logging
 from django import http
 from Calculator import *
 
@@ -54,10 +55,14 @@ def list_sample():
 
 """
 trying out this stuff: https://docs.python.org/2/library/stdtypes.html#string-formatting
+read on the appengine-specifics: https://developers.google.com/appengine/docs/python/requests
 """
 
 
 def formatting_sample(request):
+    #sample logging
+    logging.error("testing debug log")
+
     calc = Calculator()
     calc.add(2)
     print("calculated:" + str(calc.get_current()))
