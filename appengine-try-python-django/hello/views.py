@@ -1,4 +1,5 @@
 from django import http
+from Calculator import *
 
 """
 
@@ -57,6 +58,10 @@ trying out this stuff: https://docs.python.org/2/library/stdtypes.html#string-fo
 
 
 def formatting_sample(request):
+    calc = Calculator()
+    calc.add(2)
+    print("calculated:" + str(calc.get_current()))
+
     s = 'The crappy persons name is %(suz)s and %(sup)s' % {"sup": "crappy", "suz": "crappppp"}
     print s
     return http.HttpResponse(s)
