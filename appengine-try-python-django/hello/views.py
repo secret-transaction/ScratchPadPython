@@ -1,4 +1,5 @@
-import  logging
+import logging
+import datetime
 from django import http
 from Calculator import *
 
@@ -70,3 +71,10 @@ def formatting_sample(request):
     s = 'The crappy persons name is %(suz)s and %(sup)s' % {"sup": "crappy", "suz": "crappppp"}
     print s
     return http.HttpResponse(s)
+
+
+def clock(request):
+    r = "Time is "
+    r += str(datetime.datetime.now())
+
+    return http.HttpResponse(r)
