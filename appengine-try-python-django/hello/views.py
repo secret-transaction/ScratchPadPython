@@ -4,8 +4,9 @@ import datetime
 from models import Greeting
 from django import http, template
 from django.template.loader import get_template
-from django.template import Context
-from google.appengine.api import memcache, users
+# from django.template import Context
+from django.shortcuts import render
+from google.appengine.api import users
 
 from Calculator import *
 
@@ -109,5 +110,9 @@ def template_file(request):
         'logout': '/logout',
     }
 
-    t = get_template('index.html')
-    return http.HttpResponse(t.render(Context(context)))
+    # hard way
+    # t = get_template('index.html')
+    # return http.HttpResponse(t.render(Context(context)))
+
+    # easy way using django shortcuts
+    return  render(request, 'index.html', context)
