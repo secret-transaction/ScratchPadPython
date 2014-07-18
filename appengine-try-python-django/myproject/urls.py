@@ -12,4 +12,7 @@ urlpatterns = patterns(
     url(r'^formatting_sample/$', formatting_sample),
 
     url(r'^time/$', clock),
+
+    # trying out templates
+    url(r'^template/$', template_test),
 )

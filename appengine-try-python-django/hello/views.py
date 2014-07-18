@@ -1,6 +1,6 @@
 import logging
 import datetime
-from django import http
+from django import http, template
 from Calculator import *
 
 """
@@ -78,3 +78,11 @@ def clock(request):
     r += str(datetime.datetime.now())
 
     return http.HttpResponse(r)
+
+
+# templates: http://www.djangobook.com/en/2.0/chapter04.html
+def template_test(request):
+    t = template.Template('My Name is {{name}}')
+    c = template.Context({'name': 'Test'})
+
+    return http.HttpResponse(t.render(c))
