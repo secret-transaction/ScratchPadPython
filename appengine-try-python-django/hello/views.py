@@ -11,12 +11,8 @@ from google.appengine.api import users
 from Calculator import *
 
 """
-
-huge ass comments
-
-hahaha
-
-
+mime types: http://www.djangobook.com/en/2.0/chapter13.html
+filters/interceptors (sort of): http://www.djangobook.com/en/2.0/chapter17.html
 """
 
 
@@ -102,6 +98,8 @@ def template_file(request):
     g1 = Greeting()
     g1.author = user
     g1.content = "Whatever"
+    g1.put()
+    print("Created:" + str(g1.key()))
 
     context = {
         'user': user,

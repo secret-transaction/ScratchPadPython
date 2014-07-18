@@ -1,6 +1,10 @@
 from django.conf.urls import *
 from hello.views import *
 
+'''
+advance url conf stuffs here:
+http://www.djangobook.com/en/2.0/chapter08.html
+'''
 urlpatterns = patterns(
     '',
 
