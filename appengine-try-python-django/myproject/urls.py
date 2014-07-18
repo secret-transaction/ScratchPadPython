@@ -15,4 +15,7 @@ urlpatterns = patterns(
 
     # trying out templates
     url(r'^template/$', template_test),
+
+    # using templates from file
+    url(r'^template_file/$', template_file),
 )

@@ -1,6 +1,12 @@
 import logging
 import datetime
+
+from models import Greeting
 from django import http, template
+from django.template.loader import get_template
+from django.template import Context
+from google.appengine.api import memcache, users
+
 from Calculator import *
 
 """
@@ -86,3 +92,22 @@ def template_test(request):
     c = template.Context({'name': 'Test'})
 
     return http.HttpResponse(t.render(c))
+
+
+def template_file(request):
+    #copied this from: https://developers.google.com/appengine/articles/django-nonrel
+    user = users.get_current_user()
+
+    g1 = Greeting()
+    g1.author = user
+    g1.content = "Whatever"
+
+    context = {
+        'user': user,
+        'greetings': [g1],
+        'login': '/login',
+        'logout': '/logout',
+    }
+
+    t = get_template('index.html')
+    return http.HttpResponse(t.render(Context(context)))
