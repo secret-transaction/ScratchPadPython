@@ -5,9 +5,13 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: .*
-  script: myproject.wsgi.application
+- url: /_ah/spi/.*
+  script: endpoint.app_api.APPLICATION
 
 libraries:
 - name: django
   version: 1.5
+- name: pycrypto
+  version: latest
+- name: endpoints
+  version: 1.0
