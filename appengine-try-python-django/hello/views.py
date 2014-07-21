@@ -113,4 +113,19 @@ def template_file(request):
     # return http.HttpResponse(t.render(Context(context)))
 
     # easy way using django shortcuts
-    return  render(request, 'index.html', context)
+    return render(request, 'index.html', context)
+
+
+def try_except(request):
+    # this is how you handle exceptions in python
+    # http://www.afterhoursprogramming.com/tutorial/Python/Exceptions/
+    s = 'No results'
+
+    try:
+        i = s + 1
+        s = i
+    except Exception:
+        s += ' Test'
+
+    return http.HttpResponse(s)
+

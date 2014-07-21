@@ -22,4 +22,7 @@ urlpatterns = patterns(
 
     # using templates from file
     url(r'^template_file/$', template_file),
+
+    #exception
+    url(r'^boom/$', try_except),
 )
