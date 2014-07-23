@@ -8,6 +8,9 @@ handlers:
 - url: /_ah/spi/.*
   script: endpoint.app_api.APPLICATION
 
+- url: /static
+  static_dir: static
+
 libraries:
 - name: django
   version: 1.5
