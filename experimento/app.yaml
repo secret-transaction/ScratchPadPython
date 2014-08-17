@@ -11,3 +11,9 @@ handlers:
 libraries:
 - name: django
   version: 1.5
+
+- name: pycrypto
+  version: latest
+
+- name: ssl
+  version: latest
